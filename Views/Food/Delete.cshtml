@@ -1,0 +1,36 @@
+@model Food_Blog.Models.Food;
+
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Delete Data Of @Model.Name</h2>
+            <hr />
+        </div>
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="mb-3">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" placeholder="Disabled input" disabled/>
+            <span asp-validation-for="Name" class="text-danger" ></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Price"></label>
+            <input asp-for="Price" class="form-control" placeholder="Disabled input" disabled />
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Receipe">Recipe:</label>
+            <textarea asp-for="Receipe" class="form-control" rows="5" id="comment" name="text" placeholder="Disabled input" disabled></textarea>
+
+            @* <label asp-for="Receipe"></label>
+            <input asp-for="Receipe" class="form-control" /> *@
+            <span asp-validation-for="Receipe" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:150px">Delete</button>
+        <a asp-controller="Food" asp-action="Index" class="btn btn-secondary" style="width:150px">
+            Back to List
+        </a>
+    </div>
+</form>

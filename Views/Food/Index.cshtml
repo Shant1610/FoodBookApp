@@ -1,0 +1,67 @@
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary" style="text-align: center;">Cook Book </h2>
+        </div>
+        @* <div class="col-6 text-end">
+            <a asp-controller= "Food" asp-action="" class="btn btn-primary"> View Receipe</a>
+        </div>
+        <div class="col-13 text-end">
+            <a asp-controller= "Food" asp-action="" class="btn btn-danger"> View Ingedients</a>
+        </div> *@
+        <div class="col-6 text-end">
+        <a asp-controller="Food" asp-action="Add" class="btn btn-primary">
+            Add New Recipe
+        </a>
+    </div>
+    </div>
+
+</div>
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th style="width: 70px ;">
+                Id
+            </th>
+            <th>
+                Item Name
+                
+            </th>
+            <th>
+                Price
+            </th>
+        </tr>
+    </thead>
+    <trbody>
+    @foreach (var obj in Model)
+    {
+        <tr>
+            <td>
+                @obj.Id
+                
+            </td>
+            <td width="25%">
+
+                <a class="nav-link text-dark" asp-area="" asp-controller="Food" asp-action="IngredientPage" asp-route-id = "@obj.Id"> @obj.Name</a>
+               
+            </td>
+           
+            <td width = "20%">
+                @obj.Price
+            </td>
+            <td>
+                <div class="w-75 bt-group " role="group">
+                    <a asp-controller="Food" asp-action="GetRecipe" asp-route-id = "@obj.Id" class="btn btn-success mx-2" width="50%"> Get Recipe >></a>
+
+                    <a asp-controller="Food" asp-action="Update" asp-route-id = "@obj.Id" class="btn btn-primary mx-2" width = "50%" > Update Item>></a>
+
+                    <a asp-controller="Food" asp-action="Delete" asp-route-id = "@obj.Id" class="btn btn-danger mx-2" width = "50%" > Delete Item >></a>
+                </div>
+                
+            </td>
+        </tr>   
+    }
+    </trbody>
+</table>
+

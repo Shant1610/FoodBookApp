@@ -1,0 +1,72 @@
+@model Food_Blog.Models.Ingredient;
+<partial name = "_BootstrapLoad">
+
+<div class="row pb-2">
+    <div class="col-md" >
+        <h2 class="text-muted">Ingredients to Prepare @Model.Name </h2>
+    </div>
+    <div class="col"></div>
+    <div class="col">
+        <a asp-controller="Food" asp-action="AddMore" asp-route-id = "@Model.ID" class="btn btn-primary btn-right">Add More Ingredient </a></div>
+    <br>
+    <hr />
+</div>
+          
+<table style="font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;">
+    <tr>
+        <th style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Ingredient</th>
+        <th style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Quantity</th>
+    </tr>
+    <thead></thead>
+    <tbody>
+        
+        <tr: nth-child(even) style="background-color: #dddddd;"> 
+            @if(@Model.ingredient1 != null){
+                <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">@Model.ingredient1</td>
+            }
+            @if(@Model.amount1 != null){
+                <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">@Model.amount1</td>
+            }
+        </tr>
+        <tr>
+            @if(@Model.ingredient2 != null){
+                <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">@Model.ingredient2</td>
+            }
+            @if(@Model.amount2 != null){
+                <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">@Model.amount2</td>
+            }
+        </tr>
+        <tr>
+            @if(@Model.ingredient3 != null){
+                <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">@Model.ingredient3</td>
+            }
+            @if(@Model.amount3 != null){
+                <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">@Model.amount3</td>
+            }
+        </tr>
+        <tr>
+            @if(@Model.ingredient4 != null){
+                <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">@Model.ingredient4</td>
+            }
+            @if(@Model.amount4 != null){
+                <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">@Model.amount4</td>
+            }
+        </tr>
+        <tr>
+            @if(@Model.ingredient5 != null){
+                <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">@Model.ingredient5</td>
+            }
+            @if(@Model.amount5 != null){
+                <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">@Model.amount5</td>
+            }
+        </tr>    
+        
+    </tbody>           
+   
+</table>
+<br>
+<div class="d-flex" >
+    <a asp-controller="Food" asp-action="Index" class="btn btn-secondary btn-right" style="width:150px"> Back to List </a>
+</div>

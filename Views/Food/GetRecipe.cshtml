@@ -1,0 +1,15 @@
+@model Food_Blog.Models.Food;
+<partial name = "_BootstrapLoad">
+
+<div class="row pb-2">
+    <div class="col-md" >
+        <h2 class="text-muted">Recipe For @Model.Name </h2>
+    </div>
+   <hr />
+</div>
+<br>
+<p>@Model.Receipe</p>
+<br>
+ <a asp-controller="Food" asp-action="Index" class="btn btn-secondary" style="width:150px">
+            Back to List
+</a>

@@ -1,0 +1,79 @@
+@model Food_Blog.Models.Ingredient;
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-success">Add Ingredients to Your Recipe</h2>
+            <hr />
+        </div>
+        <div asp-validation-summary="All" class="text-danger"></div>
+         <div class="mb-3">
+            <label asp-for="FoodId">Enter Id of item</label>
+            <input asp-for="FoodId" class="form-control"/>
+            <span asp-validation-for="FoodId" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Name">Name</label>
+
+            <input asp-for="Name" class="form-control"/>
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="ingredient1">Enter Ingredient</label>
+            <input asp-for="ingredient1" class="form-control" />
+            <span asp-validation-for="ingredient1" class="text-danger"></span>
+        </div>
+         <div class="mb-3">
+            <label asp-for="amount1">Enter Quantity</label>
+            <input asp-for="amount1" class="form-control" />
+            <span asp-validation-for="amount1" class="text-danger"></span>
+        </div>
+         <div class="mb-3">
+            <label asp-for="ingredient2">Enter Ingredient-2</label>
+            <input asp-for="ingredient2" class="form-control" />
+            <span asp-validation-for="ingredient2" class="text-danger"></span>
+        </div>
+        
+        <div class="mb-3">
+            <label asp-for="amount2">Enter Quantity</label>
+            <input asp-for="amount2" class="form-control" />
+            <span asp-validation-for="amount2" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="ingredient3">Enter Ingredient-3</label>
+            <input asp-for="ingredient3" class="form-control" />
+            <span asp-validation-for="ingredient3" class="text-danger"></span>
+        </div>
+         <div class="mb-3">
+            <label asp-for="amount3">Enter Quantity</label>
+            <input asp-for="amount3" class="form-control" />
+            <span asp-validation-for="amount3" class="text-danger"></span>
+        </div>
+         <div class="mb-3">
+            <label asp-for="ingredient4">Enter Ingredient-4</label>
+            <input asp-for="ingredient4" class="form-control" />
+            <span asp-validation-for="ingredient4" class="text-danger"></span>
+        </div>
+         <div class="mb-3">
+            <label asp-for="amount4">Enter Quantity</label>
+            <input asp-for="amount4" class="form-control" />
+            <span asp-validation-for="amount4" class="text-danger"></span>
+        </div>
+         <div class="mb-3">
+            <label asp-for="ingredient5">Enter Ingredient-5</label>
+            <input asp-for="ingredient5" class="form-control" />
+            <span asp-validation-for="ingredient5" class="text-danger"></span>
+        </div>
+         <div class="mb-3">
+            <label asp-for="amount5">Enter Quantity</label>
+            <input asp-for="amount5" class="form-control" />
+            <span asp-validation-for="amount5" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:150px">Add</button>
+        <a asp-controller="Food" asp-action="Index" class="btn btn-secondary" style="width:150px">
+            Back to List
+        </a>
+    </div>
+</form>
